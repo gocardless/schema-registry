@@ -1,18 +1,14 @@
-Schema Registry CLI and client
+Schema Registry CLI and Client
 ==============================================
 
-This repository contains a Command Line Interface (CLI) and a Go client for the REST API of Confluent's Kafka Schema Registry.
-
-[![Build Status](https://travis-ci.org/Landoop/schema-registry.svg?branch=master)](https://travis-ci.org/Landoop/schema-registry)
-[![GoDoc](https://godoc.org/github.com/Landoop/schema-registry?status.svg)](https://godoc.org/github.com/Landoop/schema-registry)
-[![Chat](https://img.shields.io/badge/join-%20chat-00BCD4.svg?style=flat-square)](https://slackpass.io/landoop-community)
+This repository contains a Command Line Interface (CLI) and a Go client for the REST API of Confluent's Schema Registry.
 
 CLI
 ---
 
 To install the CLI, assuming a properly setup Go installation, do:
 
-`go get -u github.com/landoop/schema-registry/schema-registry-cli`
+`go get -u github.com/gocardless/schema-registry/schema-registry-cli`
 
 After that, the CLI is found in `$GOPATH/bin/schema-registry-cli`. Running `schema-registry-cli` without arguments gives:
 
@@ -48,7 +44,7 @@ Client
 The client package provides a client to deal with the registry from code. It is used by the CLI internally. Usage looks like:
 
 ```go
-import "github.com/landoop/schema-registry"
+import "github.com/gocardless/schema-registry"
 
 client, _ := schemaregistry.NewClient(schemaregistry.DefaultUrl)
 client.Subjects()
@@ -62,7 +58,7 @@ import (
     "crypto/x509"
     "io/ioutil"
 
-    "github.com/landoop/schema-registry"
+    "github.com/gocardless/schema-registry"
 )
 
 // Create a TLS config to use to connect to Schema Registry. This config will permit TLS connections to an endpoint
