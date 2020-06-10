@@ -422,7 +422,7 @@ func (c *Client) IsRegistered(subject, schema string) (bool, Schema, error) {
 	}
 
 	path := fmt.Sprintf(subjectPath, subject)
-	resp, err := c.do(http.MethodPost, path, "", send)
+	resp, err := c.do(http.MethodPost, path, contentTypeSchemaJSON, send)
 	if err != nil {
 		// schema not found?
 		if IsSchemaNotFound(err) {

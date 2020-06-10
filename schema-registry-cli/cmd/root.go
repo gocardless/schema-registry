@@ -7,7 +7,7 @@ import (
 	"os"
 
 	"github.com/fatih/color"
-	schemaregistry "github.com/landoop/schema-registry"
+	schemaregistry "github.com/gocardless/schema-registry"
 
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"

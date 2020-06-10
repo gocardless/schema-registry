@@ -4,7 +4,7 @@ os:
   - osx
 go:
   - "go1.10"
-go_import_path: github.com/landoop/schema-registry
+go_import_path: github.com/gocardless/schema-registry
 
 env:
   global:
