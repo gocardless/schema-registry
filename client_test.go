@@ -120,3 +120,10 @@ func TestIsRegisteredWrongHeader(t *testing.T) {
 	mustEqual(t, isreg, false)
 	mustEqual(t, err.Error(), "client: (: ) failed with error code 50103 wrong content type")
 }
+
+func TestVersionCheck(t *testing.T) {
+	err := checkSchemaVersionID(29)
+	if err != nil {
+		t.Fatal(err)
+	}
+}
