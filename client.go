@@ -9,6 +9,7 @@ import (
 	"fmt"
 	"io"
 	"io/ioutil"
+	"math"
 	"net"
 	"net/http"
 	"net/url"
@@ -550,7 +551,7 @@ func checkSchemaVersionID(versionID interface{}) error {
 	}
 
 	if verInt, ok := versionID.(int); ok {
-		if verInt <= 0 || verInt > 2^31-1 { // it's the max of int32, math.MaxInt32 already but do that check.
+		if verInt <= 0 || verInt > math.MaxInt32 {
 			return fmt.Errorf("client: %v integer is not a valid value for the versionID input parameter [ versionID > 0 && versionID <= 2^31-1]", versionID)
 		}
 	}
